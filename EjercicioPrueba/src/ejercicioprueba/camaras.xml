@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<camaras>
+    <camara id="1">
+        <nombre>nombre camara 1</nombre>
+        <modelo>CAMARA WEB EMPRESARIAL BRIO ULTRA HD PRO</modelo>
+        <marca>Logitech</marca>
+        <altura>27 mm</altura>
+        <anchura>102 mm</anchura>
+        <profundidad>27 mm</profundidad>
+        <peso>63 g</peso>
+        <megapixeles>13</megapixeles>
+        <comentarios>RightLight 3 con HDR para ofrecer imagenes ni­tidas en diversas condiciones de iluminacion, desde luz escasa a luz solar directa</comentarios>
+    </camara>
+    <camara id="2">
+        <nombre>nombre camara 2</nombre>
+        <modelo>CAMARA WEB HD PRO C920s</modelo>
+        <marca>Logitech</marca>
+        <altura>43,3 mm</altura>
+        <anchura>94 mm</anchura>
+        <profundidad>71 mm</profundidad>
+        <peso>162 g</peso>
+        <megapixeles>3</megapixeles>
+        <comentarios>Clip universal acoplable a tri­pode, para monitores, pantallas LCD o portatiles</comentarios>
+    </camara>
+    <camara id="3">
+        <nombre>nombre camara 3</nombre>
+        <modelo>STREAMCAM</modelo>
+        <marca>Logitech</marca>
+        <altura>66 mm</altura>
+        <anchura>58 mm</anchura>
+        <profundidad>48 mm</profundidad>
+        <peso>222 g</peso>
+        <megapixeles>-</megapixeles>
+        <comentarios>Dos microfonos omnidireccionales con filtro de reduccion de ruido</comentarios>
+    </camara>
+    <camara id="4">
+        <nombre>nombre camara 4</nombre>
+        <modelo>4K PRO MAGNETIC WEBCAM</modelo>
+        <marca>Logitech</marca>
+        <altura>3,5 cm</altura>
+        <anchura>10,1 cm</anchura>
+        <profundidad>2,7 cm</profundidad>
+        <peso>90,2 g </peso>
+        <megapixeles>-</megapixeles>
+        <comentarios>RightLight 3 con HDR para ofrecer imagenes ni­tidas en diversas condiciones de 
+            iluminacion, desde luz escasa a luz solar directa. Controles de imagen con la aplicacion 
+            Camera Settings opcional, para funciones de panoramica, inclinacion y zoom. Dos microfonos 
+            omnidireccionales integrados con cancelacion de eco y supresion de ruido</comentarios>
+    </camara>
+</camaras>

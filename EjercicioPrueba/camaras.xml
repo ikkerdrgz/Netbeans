@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<camaras>
+    <camara id="1">
+        <nombre>nombre camara 1</nombre>
+        <modelo>CAMARA WEB EMPRESARIAL BRIO ULTRA HD PRO</modelo>
+        <marca>Logitech</marca>
+        <altura>27mm</altura>
+        <anchura>102mm</anchura>
+        <profundidad>27mm</profundidad>
+        <peso>63g</peso>
+        <megapixel>13</megapixel>
+        <comentario>RightLight 3 con HDR para ofrecer imagenes ni­tidas en diversas condiciones de iluminacion, desde luz escasa a luz solar directa</comentario>
+    </camara>
+    <camara id="2">
+        <nombre>nombre camara 2</nombre>
+        <modelo>CAMARA WEB HD PRO C920s</modelo>
+        <marca>Logitech</marca>
+        <altura>43,3mm</altura>
+        <anchura>94mm</anchura>
+        <profundidad>71mm</profundidad>
+        <peso>162g</peso>
+        <megapixel>3</megapixel>
+        <comentario>Clip universal acoplable a tri­pode, para monitores, pantallas LCD o portatiles</comentario>
+    </camara>
+    <camara id="3">
+        <nombre>nombre camara 3</nombre>
+        <modelo>STREAMCAM</modelo>
+        <marca>Logitech</marca>
+        <altura>66mm</altura>
+        <anchura>58mm</anchura>
+        <profundidad>48mm</profundidad>
+        <peso>222g</peso>
+        <megapixel>-</megapixel>
+        <comentario>Dos microfonos omnidireccionales con filtro de reduccion de ruido</comentario>
+    </camara>
+    <camara id="4">
+        <nombre>nombre camara 4</nombre>
+        <modelo>4K PRO MAGNETIC WEBCAM</modelo>
+        <marca>Logitech</marca>
+        <altura>3,5cm</altura>
+        <anchura>10,1cm</anchura>
+        <profundidad>2,7cm</profundidad>
+        <peso>90,2g</peso>
+        <megapixel>-</megapixel>
+        <comentario>RightLight 3 con HDR para ofrecer imagenes ni­tidas en diversas condiciones de iluminacion, desde luz escasa a luz solar directa. Controles de imagen con la aplicacion Camera Settings opcional, para funciones de panoramica, inclinacion y zoom. Dos microfonos omnidireccionales integrados con cancelacion de eco y supresion de ruido</comentario>
+    </camara>
+</camaras>
