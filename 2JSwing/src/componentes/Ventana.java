@@ -7,6 +7,10 @@ package componentes;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -33,6 +37,8 @@ public class Ventana {
     JCheckBox check1 = new JCheckBox();
     JCheckBox check2 = new JCheckBox();
     
+    JTextArea area = new JTextArea();
+    
     JComboBox<String> combo;
     
     public Ventana(){
@@ -47,15 +53,12 @@ public class Ventana {
         panel.setLayout(null);
         frame.add(panel);
         
-        IniciarComponentes();
-        panel.updateUI();
-    }
-    
-    public void IniciarComponentes(){
         Radio();
         Check();
         ComboBox();
         BotonElegir();
+        IniciarComponentes();
+        panel.updateUI();
     }
     
     public void Radio(){
@@ -102,7 +105,6 @@ public class Ventana {
         boton.setBounds(50, 270, 100, 40);
         boton.setBackground(Color.yellow);
         
-        JTextArea area = new JTextArea();
         area.setBounds(170, 50, 230, 260);
         area.setEditable(false);    //Para que no se pueda escribir en el area de texto. 
         
@@ -150,5 +152,60 @@ public class Ventana {
         boton.addActionListener(seleccion);
         panel.add(area);
         panel.add(boton);
+    }
+    
+    public void IniciarComponentes() {
+        /*MouseListener raton = new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                area.append("mouseClicked\n");
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                area.append("mousePressed\n");
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                area.append("mouseReleased\n");
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                area.append("mouseEntered\n");
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                area.append("mouseExited\n");
+            }
+        };*/
+        
+        KeyListener teclado = new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                if (e.getKeyChar() == 'a' || e.getKeyChar() == 'A') {
+                    area.append("keyTyped\n");
+                }
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyChar() == KeyEvent.VK_ENTER) {
+                    area.append("keyPressed\n");
+                }
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+                if (e.getKeyChar() == KeyEvent.VK_9) {
+                    area.append("keyReleased\n");
+                }
+            }
+        };
+        
+        area.addKeyListener(teclado);
+        panel.add(area);
     }
 }
