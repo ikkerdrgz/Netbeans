@@ -1,4 +1,4 @@
-/*
+ /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
@@ -56,12 +56,10 @@ public class Ventana {
         for (int i = 0; i < 6; i++) {
             if (i < 2) {
                 baraja.add(new Cartas(i,"imagenes/reverso.jpg", "imagenes/scraggy.jpg"));
-            }
-            if (i > 1 && i < 4) {
+            }else if (i < 4) {
                 baraja.add(new Cartas(i,"imagenes/reverso.jpg", "imagenes/raikou.png"));
-            }
-            if (i > 3) {
-                baraja.add(new Cartas(i,"imagenes/reverso.jpg", "imagenes/sylveon.jpg"));
+            } else if (i < 7 ) {
+                baraja.add(new Cartas(i,"imagenes/reverso.jpg", "imagenes/sylveon.png"));
             }
         }
         
@@ -98,7 +96,19 @@ public class Ventana {
         carta6.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(carta6.getWidth(), carta6.getHeight(), Image.SCALE_DEFAULT)));
         carta6.setOpaque(true);
         
-        MouseListener girar = new MouseListener() {
+        int random1 = 0, random2 = 0, random3 = 0, random4 = 0, random5 = 0, random6 = 0;
+        
+        while ((random1 == random2) || (random1 == random3) || (random1 == random4) || (random1 == random5) || (random1 == random6) || (random2 == random3) || (random2 == random4) || (random2 == random5) || (random2 == random6) || (random3 == random4) || (random3 == random5) || (random3 == random6) || (random4 == random5) || (random4 == random6) || (random5 == random6))  {
+            random1 = (int) (Math.random()*6);
+            random2 = (int) (Math.random()*6);
+            random3 = (int) (Math.random()*6);
+            random4 = (int) (Math.random()*6);
+            random5 = (int) (Math.random()*6);
+            random6 = (int) (Math.random()*6);
+        }
+        System.out.println(random1 + " " + random2 + " " + random3 + " " + random4 + " " + random5 + " " + random6);
+        
+        MouseListener girar1 = new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
                                 
@@ -106,7 +116,7 @@ public class Ventana {
 
             @Override
             public void mousePressed(MouseEvent e) {
-                imagen.setImage(new ImageIcon(baraja.get(2).cara).getImage());
+                imagen.setImage(new ImageIcon(baraja.get(random1).cara).getImage());
                 carta1.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(carta1.getWidth(), carta1.getHeight(), Image.SCALE_DEFAULT)));
             }
 
@@ -114,7 +124,7 @@ public class Ventana {
             public void mouseReleased(MouseEvent e) {
                 try {
                     Thread.sleep(1000);
-                    imagen.setImage(new ImageIcon(baraja.get(2).reverso).getImage());
+                    imagen.setImage(new ImageIcon(baraja.get(random1).reverso).getImage());
                     carta1.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(carta1.getWidth(), carta1.getHeight(), Image.SCALE_DEFAULT)));
                 } catch (InterruptedException ex) {
                     Logger.getLogger(Ventana.class.getName()).log(Level.SEVERE, null, ex);
@@ -131,8 +141,183 @@ public class Ventana {
                 
             }
         };
-        carta1.addMouseListener(girar);
         
+        MouseListener girar2 = new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                                
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                imagen.setImage(new ImageIcon(baraja.get(random2).cara).getImage());
+                carta2.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(carta2.getWidth(), carta2.getHeight(), Image.SCALE_DEFAULT)));
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                try {
+                    Thread.sleep(1000);
+                    imagen.setImage(new ImageIcon(baraja.get(random2).reverso).getImage());
+                    carta2.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(carta2.getWidth(), carta2.getHeight(), Image.SCALE_DEFAULT)));
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(Ventana.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                
+            }
+        };
+        
+        MouseListener girar3 = new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                                
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                imagen.setImage(new ImageIcon(baraja.get(random3).cara).getImage());
+                carta3.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(carta3.getWidth(), carta3.getHeight(), Image.SCALE_DEFAULT)));
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                try {
+                    Thread.sleep(1000);
+                    imagen.setImage(new ImageIcon(baraja.get(random3).reverso).getImage());
+                    carta3.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(carta3.getWidth(), carta3.getHeight(), Image.SCALE_DEFAULT)));
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(Ventana.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                
+            }
+        };
+        
+        MouseListener girar4 = new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                                
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                imagen.setImage(new ImageIcon(baraja.get(random4).cara).getImage());
+                carta4.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(carta4.getWidth(), carta4.getHeight(), Image.SCALE_DEFAULT)));
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                try {
+                    Thread.sleep(1000);
+                    imagen.setImage(new ImageIcon(baraja.get(random4).reverso).getImage());
+                    carta4.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(carta4.getWidth(), carta4.getHeight(), Image.SCALE_DEFAULT)));
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(Ventana.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                
+            }
+        };
+        
+        MouseListener girar5 = new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                                
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                imagen.setImage(new ImageIcon(baraja.get(random5).cara).getImage());
+                carta5.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(carta5.getWidth(), carta5.getHeight(), Image.SCALE_DEFAULT)));
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                try {
+                    Thread.sleep(1000);
+                    imagen.setImage(new ImageIcon(baraja.get(random5).reverso).getImage());
+                    carta5.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(carta5.getWidth(), carta5.getHeight(), Image.SCALE_DEFAULT)));
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(Ventana.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                
+            }
+        };
+        
+        MouseListener girar6 = new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                                
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                imagen.setImage(new ImageIcon(baraja.get(random6).cara).getImage());
+                carta6.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(carta6.getWidth(), carta6.getHeight(), Image.SCALE_DEFAULT)));
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                try {
+                    Thread.sleep(1000);
+                    imagen.setImage(new ImageIcon(baraja.get(random6).reverso).getImage());
+                    carta6.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(carta6.getWidth(), carta6.getHeight(), Image.SCALE_DEFAULT)));
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(Ventana.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                
+            }
+        };
+        
+        carta1.addMouseListener(girar1);
+        carta2.addMouseListener(girar2);
+        carta3.addMouseListener(girar3);
+        carta4.addMouseListener(girar4);
+        carta5.addMouseListener(girar5);
+        carta6.addMouseListener(girar6);
         
         panel.add(carta1);
         panel.add(carta2);
