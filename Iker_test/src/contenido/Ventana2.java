@@ -370,7 +370,7 @@ public class Ventana2 {
         JLabel fondo = new JLabel();
         
         fondo.setBounds(0, 0, 900, 670);
-        ImageIcon imagen = new ImageIcon("C:\\Users\\FP\\Documents\\NetBeansProjects\\Iker_test\\fondo2.png");
+        ImageIcon imagen = new ImageIcon("fondo2.png");
         fondo.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(fondo.getWidth(), fondo.getHeight(), Image.SCALE_DEFAULT)));
         
         panel.add(fondo);
