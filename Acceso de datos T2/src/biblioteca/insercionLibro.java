@@ -12,10 +12,10 @@ import java.sql.*;
  */
 public class insercionLibro {
 
-    public static final String cadenaConexion = "jdbc:mysql://localhost:3306/biblioteca";
+    public static final String CADENA_CONEXION = "jdbc:mysql://localhost:3306/biblioteca";
 
     public static void visualizarLibros() {
-        try (Connection con = DriverManager.getConnection(cadenaConexion, "root", "fp.2023"); Statement sentencia = con.createStatement();) {
+        try (Connection con = DriverManager.getConnection(CADENA_CONEXION, "root", "fp.2023"); Statement sentencia = con.createStatement();) {
             String selectLibro = "SELECT * FROM Libro NATURAL JOIN (Autor, Editorial, Tema)";
             ResultSet sentenciaSelect = sentencia.executeQuery(selectLibro);
             while (sentenciaSelect.next()) {
@@ -31,22 +31,22 @@ public class insercionLibro {
                 System.out.println("------------------------------");
             }
         } catch (SQLException e) {
+            System.out.println("Conexcion incorrecta");
             System.out.println(e.getMessage());
         }
     }
 
-    public static void main(String[] args) throws SQLException {
-        try (Connection con = DriverManager.getConnection(cadenaConexion, "root", "fp.2023"); 
-                Statement sentencia = con.createStatement();
+    public static void main(String[] args) {
+        try (Connection con = DriverManager.getConnection(CADENA_CONEXION, "root", "fp.2023"); Statement sentencia = con.createStatement();
                 CallableStatement procedimiento = con.prepareCall("{CALL altaEditorial(?,?,?)}");) {
             String isbn = "123";
-            String titulo = "";
-            int numeroEjemplares = 0;
+            String titulo = "Iker";
+            int numeroEjemplares = 7;
             String nombreAutor = "";
-            String nombreEditorial = "";
-            String nombreTema = "";
+            String nombreEditorial = "Trillas";
+            String nombreTema = "Biología";
 
-            String selectLibro = "SELECT * FROM Libro WHERE isbn = '" + isbn + "';";
+            String selectLibro = "SELECT * FROM libro WHERE isbn = '" + isbn + "';";
             ResultSet sentenciaSelect = sentencia.executeQuery(selectLibro);
             if (sentenciaSelect.next()) {
                 System.out.println("El libro ya existe");
@@ -57,27 +57,26 @@ public class insercionLibro {
                 }
                 int idAutor = buscarAutor(nombreAutor, con);
                 
-                int idTema = buscarTema(nombreTema, con);
                 if (buscarTema(nombreTema, con) == 0) {
                     altaTema(nombreTema, con);
                 }
+                int idTema = buscarTema(nombreTema, con);
                 
                 if (!existeEditorial(nombreEditorial, con)) {
                     procedimiento.setString(1, nombreEditorial);
                     //Pedir datos de la editorial
                     String direccion = "Calle Nueva";
-                    String telefono = "234567891";
+                    String telefono = "23456781";
                     procedimiento.setString(2, direccion);
                     procedimiento.setString(3, telefono);
                     procedimiento.execute();
                 }
                 int idEditorial = buscarEditorial(nombreEditorial, con);
-
                 altaLibro(isbn, titulo, numeroEjemplares, idAutor, idEditorial, idTema, con);
                 visualizarLibros();
             }
         } catch (SQLException e) {
-            System.out.println("Conexcion incorrecta");
+            System.out.println("Error en la comprobacion de datos");
             System.out.println(e.getMessage());
         }
     }
@@ -93,7 +92,7 @@ public class insercionLibro {
     }
     
     private static void altaAutor(String nombreAutor, Connection con) throws SQLException {
-        String sentenciaInsert = "INSERT INTO autor (nombreAutor) values (" + nombreAutor + ")";
+        String sentenciaInsert = "INSERT INTO autor VALUES (NULL, '" + nombreAutor + "')";
         con.createStatement().executeUpdate(sentenciaInsert);
     }
 

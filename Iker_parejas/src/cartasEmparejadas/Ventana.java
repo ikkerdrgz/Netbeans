@@ -14,6 +14,7 @@ import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -38,6 +39,8 @@ public class Ventana {
     JLabel primeraCartaLabel = null;
     JLabel segundaCartaLabel = null;
     boolean bloquearCartas = false;
+    
+    int contador1 = 0, contador2 = 0;
     
     int random1 = 0, random2 = 0, random3 = 0, random4 = 0, random5 = 0, random6 = 0;
     
@@ -137,9 +140,14 @@ public class Ventana {
             try {
                 Thread.sleep(1000);
                 if (primeraCartaGirada.cara.equals(segundaCartaGirada.cara)) {
+                    contador1++;
                     primeraCartaGirada = null;
                     segundaCartaGirada = null;
+                    if (contador1 == 3) {
+                        JOptionPane.showMessageDialog(frame, "Has ganado en un total de " + (contador1 + contador2) + " intentos");
+                    }
                 } else {
+                    contador2++;
                     primeraCartaLabel.setIcon(new ImageIcon(new ImageIcon(primeraCartaGirada.reverso).getImage().getScaledInstance(primeraCartaLabel.getWidth(), primeraCartaLabel.getHeight(), Image.SCALE_DEFAULT)));
                     segundaCartaLabel.setIcon(new ImageIcon(new ImageIcon(segundaCartaGirada.reverso).getImage().getScaledInstance(segundaCartaLabel.getWidth(), segundaCartaLabel.getHeight(), Image.SCALE_DEFAULT)));
 
