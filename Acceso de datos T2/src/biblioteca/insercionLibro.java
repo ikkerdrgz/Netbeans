@@ -99,6 +99,7 @@ public class insercionLibro {
     private static int buscarAutor(String nombreAutor, Connection con) throws SQLException {
         String sentenciaAutor = "SELECT * FROM autor WHERE nombreAutor = '" + nombreAutor + "'";
         ResultSet sentenciaSelect = con.createStatement().executeQuery(sentenciaAutor);
+        sentenciaSelect.next();
         return sentenciaSelect.getInt("idAutor");
     }
 
