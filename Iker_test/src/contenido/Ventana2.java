@@ -122,7 +122,7 @@ public class Ventana2 {
         opcion12.setText("3");
         opcion13.setText("5");
         opcion11.setBounds(120,60,50,30);
-        opcion12.setBounds(120,90, 50,30);
+        opcion12.setBounds(120,90,50,30);
         opcion13.setBounds(120,120,50,30);
         
         pregunta2.setText("2. ¿Cuantos amuletos hay en el juego?");
