@@ -29,7 +29,13 @@ public class Departamentos  implements java.io.Serializable {
        this.loc = loc;
        this.empleadoses = empleadoses;
     }
-   
+    
+    public Departamentos(byte depNo, String dnombre, String loc) {
+       this.depNo = depNo;
+       this.dnombre = dnombre;
+       this.loc = loc;
+    }
+    
     public byte getDepNo() {
         return this.depNo;
     }
