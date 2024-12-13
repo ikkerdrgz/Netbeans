@@ -152,7 +152,7 @@ public class ClienteChat extends javax.swing.JFrame implements Runnable{
             return;
         }
         
-        s = new Socket("10.1.9.106",puerto);
+        s = new Socket("localhost",puerto);
         ClienteChat cliente = new ClienteChat(s, nombre);
         cliente.setBounds(0,0,540,400);
         cliente.setVisible(true);

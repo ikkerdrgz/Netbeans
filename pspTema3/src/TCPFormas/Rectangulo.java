@@ -36,4 +36,12 @@ public class Rectangulo implements Serializable {
     public void setAltura(double altura) {
         this.altura = altura;
     }
+
+    double calcularArea() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    double calcularPerimetro() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

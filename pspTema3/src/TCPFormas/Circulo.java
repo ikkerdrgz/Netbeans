@@ -27,7 +27,11 @@ public class Circulo implements Serializable {
         this.radio = radio;
     }
 
+    double calcularPerimetro() {
+        return radio * 2;
+    }
+
     double calcularArea() {
-        
+        return radio * 3;
     }
 }

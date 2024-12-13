@@ -26,4 +26,12 @@ public class Cuadrado implements Serializable {
     public void setLado(double lado) {
         this.lado = lado;
     }
+
+    double calcularArea() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    double calcularPerimetro() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
